@@ -16,7 +16,7 @@ bot = discord.Bot(activity = discord.Game(name="/fueled"),status=discord.Status.
 @bot.event
 async def on_ready():
     print("Fueled's bot is now online")
-    print("No errors so far :) ")
+    # print("No errors so far :) ")
 activity = discord.Activity(type=discord.ActivityType.listening, name="/fueled")
 
 # command tags
