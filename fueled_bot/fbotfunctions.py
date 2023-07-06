@@ -1,6 +1,7 @@
 import json
+path_cmds,path_lock = "cmds.json","lockunlock.txt"
 def read_file():
-    with open("C:\\Users\\omega\\OneDrive\\Desktop\\py\\py\\discord_bots\\fueled_bot\\cmds.json", "r") as file:
+    with open(path_cmds, "r") as file:
         data = json.load(file)
         if data == None or data == 0 or data == {}:
             return data
@@ -8,17 +9,17 @@ def read_file():
             return data
 
 def write_file(data):
-    with open("C:\\Users\\omega\\OneDrive\\Desktop\\py\\py\\discord_bots\\fueled_bot\\cmds.json", "w") as file:
+    with open(path_cmds, "w") as file:
         json.dump(data, file, indent=4)
 
 def lock_status():
-    with open("C:\\Users\\omega\\OneDrive\\Desktop\\py\\py\\discord_bots\\fueled_bot\\lockunlock.txt", "r") as file:
+    with open(path_lock, "r") as file:
         status = file.read(8)
         status = status.rstrip()
         return status
 
 def write_lock_status(status):
-    with open("C:\\Users\\omega\\OneDrive\\Desktop\\py\\py\\discord_bots\\fueled_bot\\lockunlock.txt", "w") as file:
+    with open(path_lock, "w") as file:
         if status.lower()=='lock':
             file.write('locked')
             return True
